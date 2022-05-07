@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <script>performance.mark('HEAD Start');</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling at the first hurdle</title>
+    <link rel="preconnect" href="https://deanmorgan.dev" crossorigin>
+
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-90103445-1', {'siteSpeedSampleRate': 100});
+      ga('send', 'pageview');
+    </script>
+
+    <script>performance.mark('CSS Start');</script>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Dean Morgan">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Dean Morgan">
+    <script>
+      performance.mark('CSS End');
+      performance.measure('CSS Time', 'CSS Start', 'CSS End');
+    </script>
+
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="/assets/js/main.js" async></script>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@deanjmorgan">
+    <meta name="twitter:domain" content="deanmorgan.dev">
+    <meta name="twitter:creator" content="@deanjmorgan">
+    <meta name="twitter:title" content="deanmorgan.dev">
+    <meta name="twitter:image" content="https://deanmorgan.dev/logo.png">
+    <meta name="twitter:description" content="Articles from a front-end developer on architecture, scalability and performance.">
+    <meta property="og:title" content="deanmorgan.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deanmorgan.dev">
+    <meta property="og:image" content="https://deanmorgan.dev/logo.png">
+
+    <link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <meta name="apple-mobile-web-app-title" content="deanmorgan">
+    <meta name="description" content="I&#39;ve already fell at the first hurdle with this site.">
+
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Place favicon.ico in the root directory -->
+    <script>
+      performance.mark('HEAD End');
+      performance.measure('HEAD Time', 'HEAD Start', 'HEAD End');
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="home"><a href="/">Dean Morgan</a></h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/about/">About</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+      </ul>
+    </header>
+
+    <script>performance.mark('Content Start')</script>
+    <main class="u-padding-small">
+      <h1>Falling at the first hurdle</h1>
+
+<time datetime="2021-10-14">14 Oct 2021</time><a href="/tags/observations/" class="post-tag">observations</a>
+
+<p>I've already fallen at the first hurdle with this site. I started to build it back in May and everything was going well. I had all the best intentions to keep developing it, but then life threw me a curveball that I hadn't prepared for and that changed everything.</p>
+<p>Not long after I had started building this website, I decided that I was going to be leaving my role as a Frontend Developer at Flavour Warehouse and move on to a new role at <a href="https://www.pinpointdesigns.co.uk/">Pinpoint</a>, one of the leading Magento 2 agencies in the UK. During the job transition this site got put on the shelf as I wanted to make sure that a) all the work I had done at Flavour Warehouse had been properly documented and handed over to the relevant parties and b) I wanted to make sure I could hit the ground running with my new position at Pinpoint.</p>
+<p>Now I've settled in at Pinpoint, I fired this project back up and suddenly realised that the time that I had spent away from it was enough for me to lose track of where I was at. I am going to need to re-learn some of the things I had already learned previously.</p>
+<p>Rather than juggling lots of projects, I have always tended to focus on one at a time. However, now that I've started working for an agency, I've realised that this isn't a luxury I have anymore and I often find myself swapping between projects on a daily basis. With that in mind, I am also hoping to try and adopt that into my personal projects now and rather than spend weeks on each project at once, break it down and do smaller bits on each in rotation.</p>
+<p>The other thing I can do to help myself better manage projects would be to improve the way I am documenting my work. So going forwards, I am going to try and make sure that I leave enough time to document everything I have been doing so that if there is ever a long period of time between sessions of work, I should be able to read through the docs and be back up to speed much easier. This will no doubt take some getting used to, but again it is a valueable skillset to have, especially when working in an agency setting.</p>
+<p>This probably isn't the most helpful or entertaining of blog posts for anyone who stumbles across it, but for me it will serve as a reminder of how I should be making adjustments to my approach so that I can improve.</p>
+<p>Let's see how it goes...</p>
+
+
+    </main>
+    <script>performance.mark('Content End')</script>
+
+    <footer></footer>
+
+    <!-- Current page: /posts/01-falling-at-the-first-hurdle/ -->
+
+    <script>
+      performance.measure('Content Time', 'Content Start', 'Content End');
+      window.addEventListener('load', function() {
+
+        // Only progress if the browser supports User Timings
+        if (window.performance) {
+
+          // Store URL params for debugging later
+          var params = (new URL(document.location)).searchParams;
+
+          // Loop through all performance entries we’ve captured
+          perfEntries = performance.getEntries();
+          for (i = 0; i < perfEntries.length; i++) {
+
+            // Only act on mark or measure timings
+            if (perfEntries[i].entryType == 'mark' || perfEntries[i].entryType == 'measure') {
+
+              // For marks we need the startTime; for measures we need the duration
+              var timingType = perfEntries[i].entryType == 'mark' ? perfEntries[i].startTime : perfEntries[i].duration;
+
+              // Send the data off to Google Analytics and store in our ‘Custom Timings’ category
+              ga('send', 'timing', 'Custom Timings', perfEntries[i].name, timingType);
+
+              // Log the marks and measures if we have ?debug=true on the URL
+              if (params.get('debug')) {
+                console.log(perfEntries[i].name + ': ' + timingType);
+              }
+            }
+          }
+        }
+      }());
+    </script>
+  </body>
+</html>

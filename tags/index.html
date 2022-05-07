@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <script>performance.mark('HEAD Start');</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dean Morgan</title>
+    <link rel="preconnect" href="https://deanmorgan.dev" crossorigin>
+
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-90103445-1', {'siteSpeedSampleRate': 100});
+      ga('send', 'pageview');
+    </script>
+
+    <script>performance.mark('CSS Start');</script>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Dean Morgan">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Dean Morgan">
+    <script>
+      performance.mark('CSS End');
+      performance.measure('CSS Time', 'CSS Start', 'CSS End');
+    </script>
+
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="/assets/js/main.js" async></script>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@deanjmorgan">
+    <meta name="twitter:domain" content="deanmorgan.dev">
+    <meta name="twitter:creator" content="@deanjmorgan">
+    <meta name="twitter:title" content="deanmorgan.dev">
+    <meta name="twitter:image" content="https://deanmorgan.dev/logo.png">
+    <meta name="twitter:description" content="Articles from a front-end developer on architecture, scalability and performance.">
+    <meta property="og:title" content="deanmorgan.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deanmorgan.dev">
+    <meta property="og:image" content="https://deanmorgan.dev/logo.png">
+
+    <link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <meta name="apple-mobile-web-app-title" content="deanmorgan">
+    <meta name="description" content="A personal blog site built with eleventy and hosted on github pages.">
+
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Place favicon.ico in the root directory -->
+    <script>
+      performance.mark('HEAD End');
+      performance.measure('HEAD Time', 'HEAD Start', 'HEAD End');
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="home"><a href="/">Dean Morgan</a></h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/about/">About</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+      </ul>
+    </header>
+
+    <script>performance.mark('Content Start')</script>
+    <main class="tmpl-home">
+      <h1>Tags</h1>
+
+
+  
+  <a href="/tags/observations/" class="post-tag">observations</a>
+
+
+
+    </main>
+    <script>performance.mark('Content End')</script>
+
+    <footer></footer>
+
+    <!-- Current page: /tags/ -->
+
+    <script>
+      performance.measure('Content Time', 'Content Start', 'Content End');
+      window.addEventListener('load', function() {
+
+        // Only progress if the browser supports User Timings
+        if (window.performance) {
+
+          // Store URL params for debugging later
+          var params = (new URL(document.location)).searchParams;
+
+          // Loop through all performance entries we’ve captured
+          perfEntries = performance.getEntries();
+          for (i = 0; i < perfEntries.length; i++) {
+
+            // Only act on mark or measure timings
+            if (perfEntries[i].entryType == 'mark' || perfEntries[i].entryType == 'measure') {
+
+              // For marks we need the startTime; for measures we need the duration
+              var timingType = perfEntries[i].entryType == 'mark' ? perfEntries[i].startTime : perfEntries[i].duration;
+
+              // Send the data off to Google Analytics and store in our ‘Custom Timings’ category
+              ga('send', 'timing', 'Custom Timings', perfEntries[i].name, timingType);
+
+              // Log the marks and measures if we have ?debug=true on the URL
+              if (params.get('debug')) {
+                console.log(perfEntries[i].name + ': ' + timingType);
+              }
+            }
+          }
+        }
+      }());
+    </script>
+  </body>
+</html>

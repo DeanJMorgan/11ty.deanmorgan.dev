@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Dean James Morgan -- Lead Developer -- @deanjmorgan
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    11ty, Modernizr, Normalize.css, main.css, Parcel
