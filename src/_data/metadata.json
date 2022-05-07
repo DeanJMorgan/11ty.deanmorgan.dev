@@ -1,21 +1,21 @@
 {
   "title": "Dean Morgan",
-  "url": "https://deanmorgan.me/",
+  "url": "https://deanmorgan.dev/",
   "language": "en",
   "description": "A personal blog site built with eleventy and hosted on github pages.",
   "feed": {
     "subtitle": "A personal blog site built with eleventy and hosted on github pages.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://deanmorgan.me/"
+    "id": "https://deanmorgan.dev/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://deanmorgan.me/feed/feed.json"
+    "url": "https://deanmorgan.dev/feed/feed.json"
   },
   "author": {
     "name": "Dean James Morgan",
-    "email": "hello@deanmorgan.me",
-    "url": "https://deanmorgan.me/about-me/"
+    "email": "hello@deanmorgan.dev",
+    "url": "https://deanmorgan.dev/about-me/"
   }
 }

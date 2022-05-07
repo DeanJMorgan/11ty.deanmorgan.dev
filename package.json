@@ -1,5 +1,5 @@
 {
-  "name": "deanmorgan.me",
+  "name": "deanmorgan.dev",
   "version": "1.0.0",
   "description": "A personal blog site built with eleventy and hosted on github pages.",
   "scripts": {
@@ -20,18 +20,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/deanjmorgan/deanmorgan.me.git"
+    "url": "git://github.com/deanjmorgan/deanmorgan.dev.git"
   },
   "author": {
     "name": "Dean James Morgan",
-    "email": "hello@deanmorgan.me",
-    "url": "https://deanmorgan.me/"
+    "email": "hello@deanmorgan.dev",
+    "url": "https://deanmorgan.dev/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/deanjmorgan/deanmorgan.me/issues"
+    "url": "https://github.com/deanjmorgan/deanmorgan.dev/issues"
   },
-  "homepage": "https://github.com/deanjmorgan/deanmorgan.me#readme",
+  "homepage": "https://github.com/deanjmorgan/deanmorgan.dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.0",
