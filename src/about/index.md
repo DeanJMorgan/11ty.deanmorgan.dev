@@ -9,12 +9,6 @@ eleventyNavigation:
 
 # About Me
 
-Hi there, I'm Dean. I'm a Frontend Web Developer from Darwen, UK. I specialise in building highly optimsed websites that deliver fast and reliable experiences to their users.
-
-I've been building websites in one form or another since 1998 and during that time I've worked many different roles for many different companies. I am currently working as a Frontend Developer for [Pinpoint Designs](https://www.pinpointdesigns.co.uk/), a specialist Magento 2 Agency based in Leeds.
-
-I also produce music and have done so for over 20 years. For many years (throughout most of my 20s) I did this as a career, working fulltime as Producer/DJ. During that time I was lucky enough to work with some of the biggest brands in dance music and was featured on various different releases around the world. This is not a site about my music career, but I'm sure I'll dedicate a page too it at some point in the future as I am proud of the things I achieved.
-
 ## Skills I've acquired
 
 - Frontend Web Development
