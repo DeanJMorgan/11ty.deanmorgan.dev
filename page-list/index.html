@@ -16,8 +16,7 @@
     </script>
 
     <script>performance.mark('CSS Start');</script>
-    <link rel="stylesheet" href="/assets/css/index.css">
-    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Dean Morgan">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="Dean Morgan">
     <script>
@@ -53,18 +52,20 @@
     </script>
   </head>
 
-  <body>
+  <body class="page-layout">
     <header>
-      <h1 class="home"><a href="/">Dean Morgan</a></h1>
+      <h1 class="site-title"><a href="/">Dean Morgan</a></h1>
       <ul class="nav">
         <li class="nav-item"><a href="/">Home</a></li>
         <li class="nav-item"><a href="/about/">About</a></li>
         <li class="nav-item"><a href="/posts/">Archive</a></li>
       </ul>
+      <hr>
     </header>
 
     <script>performance.mark('Content Start')</script>
-    <main class="tmpl-home">
+
+    <main>
       <table>
   <thead>
     <th>URL</th>
@@ -98,11 +99,16 @@
   </tbody>
 </table>
 
-
     </main>
+
+    
+
     <script>performance.mark('Content End')</script>
 
-    <footer></footer>
+    <footer>
+      <hr>
+      <p>Footer content</p>
+    </footer>
 
     <!-- Current page: /page-list/ -->
 
