@@ -1,15 +1,18 @@
 ---
 layout: base.njk
-templateClass: tmpl-post
+templateClass: page-layout--post
 ---
 <h1>{{ title }}</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+<div class="post-date">
+  <span>Posted on: </span><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+</div>
+<div class="post-tags">
 {%- for tag in tags | filterTagList -%}
 {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+<a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
 {%- endfor %}
-
+</div>
 {{ content | safe }}
 
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
