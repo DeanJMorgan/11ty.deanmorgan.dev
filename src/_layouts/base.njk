@@ -16,8 +16,7 @@
     </script>
 
     <script>performance.mark('CSS Start');</script>
-    <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/prism-base16-monokai.dark.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <script>
@@ -53,9 +52,9 @@
     </script>
   </head>
 
-  <body>
+  <body class="page-layout{% if templateClass %} {{ templateClass }}{% endif %}">
     <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+      <h1 class="site-title"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       <ul class="nav">
@@ -63,15 +62,30 @@
         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
       {%- endfor %}
       </ul>
+      <hr>
     </header>
 
     <script>performance.mark('Content Start')</script>
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+
+    <main>
       {{ content | safe }}
     </main>
+
+    {% if showSidebar %}
+    <aside>
+      <p>Hi there, I'm a frontend developer and performance engineer from Darwen, UK.</p>
+      <p>I specialise in building highly optimsed websites that deliver fast and reliable experiences to their users.</p>
+      <p>I write about css architecture, scalability and site performance.</p>
+      <p>I've been building websites in one form or another since 1998. During that time I've had many different roles, for many different companies. I am currently employed as a Frontend Developer for <a href="https://www.pinpointdesigns.co.uk/">Pinpoint Designs</a>, a specialist Magento 2 Agency based in Leeds, UK</p>
+    </aside>
+    {% endif %}
+
     <script>performance.mark('Content End')</script>
 
-    <footer></footer>
+    <footer>
+      <hr>
+      <p>Footer content</p>
+    </footer>
 
     <!-- Current page: {{ page.url | url }} -->
 
