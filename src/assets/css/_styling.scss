@@ -1,6 +1,24 @@
-@import "reset";
-@import "elements";
-@import "page-layouts";
+body {
+    font-family: system-ui;
+  }
+  
+  a[href]:not([class]) {
+    text-decoration: underline;
+    text-decoration-color: #1b68d562;
+    text-decoration-thickness: 3px;
+  
+    &:hover {
+      text-decoration-color: #1b68d5;
+    }
+  }
+
+  hr {
+    display: block;
+    border-bottom: 1px dashed #00000033;
+    margin-bottom: 1rem;
+  }
+
+
 
 .site-title {
   font-size: 2.5rem;
