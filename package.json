@@ -12,8 +12,8 @@
     "build:site": "eleventy",
     "build:js": "rollup -c rollup.config.js",
     "watch:js": "rollup -c rollup.config.js -w",
-    "watch:scss": "sass --load-path=node_modules/tasty-css --load-path=node_modules/sass-mq src/assets/css:src/assets/build/css --watch",
-    "build:scss": "sass --load-path=node_modules/tasty-css --load-path=node_modules/sass-mq src/assets/css:src/assets/build/css",
+    "watch:scss": "sass --load-path=node_modules/@itstasty/tasty-css --load-path=node_modules/sass-mq src/assets/css:src/assets/build/css --watch",
+    "build:scss": "sass --load-path=node_modules/@itstasty/tasty-css --load-path=node_modules/sass-mq src/assets/css:src/assets/build/css",
     "lint:scss": "./node_modules/.bin/stylelint \"src/assets/css/**/*.scss\"",
     "postcss": "postcss src/assets/build/css/*.css --replace --use autoprefixer postcss-minify",
     "start": "npm-run-all clean:dist clean:assets build:js build:scss --parallel watch:js watch:scss serve",
@@ -39,6 +39,7 @@
     "@11ty/eleventy-navigation": "^0.3.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@itstasty/tasty-css": "0.0.3",
     "autoprefixer": "^10.4.7",
     "expect.js": "^0.3.0",
     "jsdom": "^19.0.0",
@@ -55,7 +56,6 @@
     "sass": "^1.34.0",
     "stylelint": "^14.8.2",
     "stylelint-config-standard-scss": "^3.0.0",
-    "stylelint-scss": "^4.2.0",
-    "@itstasty/tasty-css": "0.0.1"
+    "stylelint-scss": "^4.2.0"
   }
 }
