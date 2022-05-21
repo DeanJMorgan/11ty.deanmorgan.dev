@@ -56,6 +56,6 @@
     "stylelint": "^14.8.2",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-scss": "^4.2.0",
-    "tasty-css": "github:itstasty/tasty-css"
+    "@itstasty/tasty-css": "0.0.1"
   }
 }
