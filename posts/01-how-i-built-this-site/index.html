@@ -72,8 +72,11 @@
 </div>
 <div class="post-tags"><a href="/tags/11ty/" class="tag tag--11ty">11ty</a><a href="/tags/scss/" class="tag tag--scss">scss</a><a href="/tags/webperf/" class="tag tag--webperf">webperf</a><a href="/tags/github/" class="tag tag--github">github</a><a href="/tags/npm/" class="tag tag--npm">npm</a>
 </div>
+<h2 id="intro" tabindex="-1">Intro<!-- omit in toc --> <a class="direct-link" href="#intro">#</a></h2>
+<p>This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you'll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I'll make some mistakes, and be learning along the way. It's not going to be pretty, but I'll try my best to take you on a journey with me as I build this site. Good Luck!</p>
+<p><strong>Lets Begin...</strong></p>
+<hr>
 <ul>
-<li><a href="#intro">Intro</a></li>
 <li><a href="#initialising-the-project">Initialising the project</a>
 <ul>
 <li><a href="#cloning-an-11ty-template-project">Cloning an 11ty template project</a></li>
@@ -117,11 +120,32 @@
 <li><a href="#modified-the-way-post-tags-are-rendered">Modified the way post tags are rendered</a></li>
 </ul>
 </li>
+<li><a href="#adding-tasty-css">Adding tasty-css</a>
+<ul>
+<li><a href="#adding-tasty-css-as-a-dependency">Adding tasty-css as a dependency</a></li>
+<li><a href="#autoprefixing-and-minifying">Autoprefixing and minifying</a></li>
+<li><a href="#linting-scss">Linting scss</a></li>
+<li><a href="#include-tasty-css-on-the-pages">Include tasty-css on the pages</a></li>
+<li><a href="#adding-tasty-css-to-npm">Adding tasty-css to npm</a></li>
+</ul>
+</li>
+<li><a href="#more-maintenance">More maintenance</a>
+<ul>
+<li><a href="#updating-packages-again">Updating packages (again)</a></li>
+<li><a href="#removed-unused-css">Removed unused css</a></li>
+<li><a href="#added-svg-icons">Added svg icons</a>
+<ul>
+<li><a href="#added-icons-to-tags">Added icons to tags</a></li>
+<li><a href="#added-icons-to-footer">Added icons to footer</a></li>
+</ul>
+</li>
+<li><a href="#fixed-minor-layout-styling-issues">Fixed minor layout styling issues</a></li>
+<li><a href="#added-styling-for-pre-and-code-elements">Added styling for pre and code elements</a></li>
+</ul>
+</li>
+<li><a href="#created-this-post">Created this post</a></li>
 </ul>
 <hr>
-<h2 id="intro" tabindex="-1">Intro <a class="direct-link" href="#intro">#</a></h2>
-<p>This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you'll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I'll make some mistakes, and be learning along the way. It's not going to be pretty, but I'll try my best to take you on a journey with me as I build this site. Good Luck!</p>
-<p><strong>Lets Begin</strong></p>
 <h2 id="initialising-the-project" tabindex="-1">Initialising the project <a class="direct-link" href="#initialising-the-project">#</a></h2>
 <p>Quick precursor, prior to this project I had been using a static site generator I built myself using gulp, which had support for nunjucks, scss and js (via webpack). I'd used this to build various prototype and proeuction sites, but I wanted to add more to it and updating and maintaining it all was becoming a bit too much of a chore for me. I'd heard about other static site builders, looked at the spec for each one and landed on 11ty as my preferred choice. The reasons for this where that it supported a lot of the functionallity that I wanted to add to my site builder.</p>
 <p>11ty provides a wide range of template projects that you can use as a starter. I looked through some of these and settled one one of the more basic ones. I wanted to use this as an oppurtunity to learn about 11ty, and as such I wanted a very minimal starter.</p>
@@ -234,6 +258,30 @@ Tested and everything seemed fine initially</p>
 <p>Originally most of the pages where using a layout file <code>home.njk</code> which I replaced with <code>base.njk</code>.</p>
 <h3 id="modified-the-way-post-tags-are-rendered" tabindex="-1">Modified the way post tags are rendered <a class="direct-link" href="#modified-the-way-post-tags-are-rendered">#</a></h3>
 <p>Made changes to <code>post.njk</code> and <code>postslists.njk</code> to change how tags are output.</p>
+<h2 id="adding-tasty-css" tabindex="-1">Adding tasty-css <a class="direct-link" href="#adding-tasty-css">#</a></h2>
+<h3 id="adding-tasty-css-as-a-dependency" tabindex="-1">Adding tasty-css as a dependency <a class="direct-link" href="#adding-tasty-css-as-a-dependency">#</a></h3>
+<p>Added tasty-css as a dependency via the GitHub repo</p>
+<h3 id="autoprefixing-and-minifying" tabindex="-1">Autoprefixing and minifying <a class="direct-link" href="#autoprefixing-and-minifying">#</a></h3>
+<p>Installed postcss and some plugins to faciliate in autoprefixing and minifying css</p>
+<h3 id="linting-scss" tabindex="-1">Linting scss <a class="direct-link" href="#linting-scss">#</a></h3>
+<p>Installed stylelint via npm</p>
+<h3 id="include-tasty-css-on-the-pages" tabindex="-1">Include tasty-css on the pages <a class="direct-link" href="#include-tasty-css-on-the-pages">#</a></h3>
+<p>Updated the head to include tasty-css<br>
+Modifed tasty.scss to include additional partials</p>
+<h3 id="adding-tasty-css-to-npm" tabindex="-1">Adding tasty-css to npm <a class="direct-link" href="#adding-tasty-css-to-npm">#</a></h3>
+<p>It became clear I'd need to be able to version control tasty-css as it's in very early stages of development. I had to learn how to release the package to npm,</p>
+<h2 id="more-maintenance" tabindex="-1">More maintenance <a class="direct-link" href="#more-maintenance">#</a></h2>
+<h3 id="updating-packages-(again)" tabindex="-1">Updating packages (again) <a class="direct-link" href="#updating-packages-(again)">#</a></h3>
+<p>Updated various packages to their latest version</p>
+<h3 id="removed-unused-css" tabindex="-1">Removed unused css <a class="direct-link" href="#removed-unused-css">#</a></h3>
+<p>Commented out all tasty-css partials that are not currently in use</p>
+<h3 id="added-svg-icons" tabindex="-1">Added svg icons <a class="direct-link" href="#added-svg-icons">#</a></h3>
+<h4 id="added-icons-to-tags" tabindex="-1">Added icons to tags <a class="direct-link" href="#added-icons-to-tags">#</a></h4>
+<h4 id="added-icons-to-footer" tabindex="-1">Added icons to footer <a class="direct-link" href="#added-icons-to-footer">#</a></h4>
+<h3 id="fixed-minor-layout-styling-issues" tabindex="-1">Fixed minor layout styling issues <a class="direct-link" href="#fixed-minor-layout-styling-issues">#</a></h3>
+<h3 id="added-styling-for-pre-and-code-elements" tabindex="-1">Added styling for pre and code elements <a class="direct-link" href="#added-styling-for-pre-and-code-elements">#</a></h3>
+<h2 id="created-this-post" tabindex="-1">Created this post <a class="direct-link" href="#created-this-post">#</a></h2>
+<p>All the writing in this post before this point was written 'after the fact'. From this point forward, the plan is to maintain this doc as I go along. There are parts I need to go back and edit, and I will do that eventually, but the most important part at this stage is to make sure that anything done from here onwards is done on this post, at the time it happens.</p>
 
 
     </main>

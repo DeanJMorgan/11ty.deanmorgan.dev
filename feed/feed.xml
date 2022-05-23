@@ -17,8 +17,11 @@
 		<link href="https://deanmorgan.dev/posts/01-how-i-built-this-site/"/>
 		<updated>2022-05-23T00:00:00Z</updated>
 		<id>https://deanmorgan.dev/posts/01-how-i-built-this-site/</id>
-		<content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#intro&quot;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+		<content type="html">&lt;h2 id=&quot;intro&quot; tabindex=&quot;-1&quot;&gt;Intro&lt;!-- omit in toc --&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#intro&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you&#39;ll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I&#39;ll make some mistakes, and be learning along the way. It&#39;s not going to be pretty, but I&#39;ll try my best to take you on a journey with me as I build this site. Good Luck!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lets Begin...&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#initialising-the-project&quot;&gt;Initialising the project&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cloning-an-11ty-template-project&quot;&gt;Cloning an 11ty template project&lt;/a&gt;&lt;/li&gt;
@@ -62,11 +65,32 @@
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modified-the-way-post-tags-are-rendered&quot;&gt;Modified the way post tags are rendered&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-tasty-css&quot;&gt;Adding tasty-css&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-tasty-css-as-a-dependency&quot;&gt;Adding tasty-css as a dependency&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#autoprefixing-and-minifying&quot;&gt;Autoprefixing and minifying&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#linting-scss&quot;&gt;Linting scss&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#include-tasty-css-on-the-pages&quot;&gt;Include tasty-css on the pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-tasty-css-to-npm&quot;&gt;Adding tasty-css to npm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#more-maintenance&quot;&gt;More maintenance&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-packages-again&quot;&gt;Updating packages (again)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#removed-unused-css&quot;&gt;Removed unused css&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-svg-icons&quot;&gt;Added svg icons&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-icons-to-tags&quot;&gt;Added icons to tags&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-icons-to-footer&quot;&gt;Added icons to footer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#fixed-minor-layout-styling-issues&quot;&gt;Fixed minor layout styling issues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-styling-for-pre-and-code-elements&quot;&gt;Added styling for pre and code elements&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#created-this-post&quot;&gt;Created this post&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h2 id=&quot;intro&quot; tabindex=&quot;-1&quot;&gt;Intro &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#intro&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you&#39;ll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I&#39;ll make some mistakes, and be learning along the way. It&#39;s not going to be pretty, but I&#39;ll try my best to take you on a journey with me as I build this site. Good Luck!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Lets Begin&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;initialising-the-project&quot; tabindex=&quot;-1&quot;&gt;Initialising the project &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#initialising-the-project&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Quick precursor, prior to this project I had been using a static site generator I built myself using gulp, which had support for nunjucks, scss and js (via webpack). I&#39;d used this to build various prototype and proeuction sites, but I wanted to add more to it and updating and maintaining it all was becoming a bit too much of a chore for me. I&#39;d heard about other static site builders, looked at the spec for each one and landed on 11ty as my preferred choice. The reasons for this where that it supported a lot of the functionallity that I wanted to add to my site builder.&lt;/p&gt;
 &lt;p&gt;11ty provides a wide range of template projects that you can use as a starter. I looked through some of these and settled one one of the more basic ones. I wanted to use this as an oppurtunity to learn about 11ty, and as such I wanted a very minimal starter.&lt;/p&gt;
@@ -179,6 +203,30 @@ Tested and everything seemed fine initially&lt;/p&gt;
 &lt;p&gt;Originally most of the pages where using a layout file &lt;code&gt;home.njk&lt;/code&gt; which I replaced with &lt;code&gt;base.njk&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;modified-the-way-post-tags-are-rendered&quot; tabindex=&quot;-1&quot;&gt;Modified the way post tags are rendered &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modified-the-way-post-tags-are-rendered&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Made changes to &lt;code&gt;post.njk&lt;/code&gt; and &lt;code&gt;postslists.njk&lt;/code&gt; to change how tags are output.&lt;/p&gt;
+&lt;h2 id=&quot;adding-tasty-css&quot; tabindex=&quot;-1&quot;&gt;Adding tasty-css &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-tasty-css&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;adding-tasty-css-as-a-dependency&quot; tabindex=&quot;-1&quot;&gt;Adding tasty-css as a dependency &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-tasty-css-as-a-dependency&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Added tasty-css as a dependency via the GitHub repo&lt;/p&gt;
+&lt;h3 id=&quot;autoprefixing-and-minifying&quot; tabindex=&quot;-1&quot;&gt;Autoprefixing and minifying &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#autoprefixing-and-minifying&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Installed postcss and some plugins to faciliate in autoprefixing and minifying css&lt;/p&gt;
+&lt;h3 id=&quot;linting-scss&quot; tabindex=&quot;-1&quot;&gt;Linting scss &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#linting-scss&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Installed stylelint via npm&lt;/p&gt;
+&lt;h3 id=&quot;include-tasty-css-on-the-pages&quot; tabindex=&quot;-1&quot;&gt;Include tasty-css on the pages &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#include-tasty-css-on-the-pages&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Updated the head to include tasty-css&lt;br /&gt;
+Modifed tasty.scss to include additional partials&lt;/p&gt;
+&lt;h3 id=&quot;adding-tasty-css-to-npm&quot; tabindex=&quot;-1&quot;&gt;Adding tasty-css to npm &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-tasty-css-to-npm&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It became clear I&#39;d need to be able to version control tasty-css as it&#39;s in very early stages of development. I had to learn how to release the package to npm,&lt;/p&gt;
+&lt;h2 id=&quot;more-maintenance&quot; tabindex=&quot;-1&quot;&gt;More maintenance &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#more-maintenance&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;updating-packages-(again)&quot; tabindex=&quot;-1&quot;&gt;Updating packages (again) &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-packages-(again)&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Updated various packages to their latest version&lt;/p&gt;
+&lt;h3 id=&quot;removed-unused-css&quot; tabindex=&quot;-1&quot;&gt;Removed unused css &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#removed-unused-css&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Commented out all tasty-css partials that are not currently in use&lt;/p&gt;
+&lt;h3 id=&quot;added-svg-icons&quot; tabindex=&quot;-1&quot;&gt;Added svg icons &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-svg-icons&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;added-icons-to-tags&quot; tabindex=&quot;-1&quot;&gt;Added icons to tags &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-icons-to-tags&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;added-icons-to-footer&quot; tabindex=&quot;-1&quot;&gt;Added icons to footer &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-icons-to-footer&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;fixed-minor-layout-styling-issues&quot; tabindex=&quot;-1&quot;&gt;Fixed minor layout styling issues &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#fixed-minor-layout-styling-issues&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;added-styling-for-pre-and-code-elements&quot; tabindex=&quot;-1&quot;&gt;Added styling for pre and code elements &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#added-styling-for-pre-and-code-elements&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;created-this-post&quot; tabindex=&quot;-1&quot;&gt;Created this post &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#created-this-post&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;All the writing in this post before this point was written &#39;after the fact&#39;. From this point forward, the plan is to maintain this doc as I go along. There are parts I need to go back and edit, and I will do that eventually, but the most important part at this stage is to make sure that anything done from here onwards is done on this post, at the time it happens.&lt;/p&gt;
 </content>
 	</entry>
 </feed>
