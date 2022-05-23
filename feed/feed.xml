@@ -5,7 +5,7 @@
 	
 	<link href="https://deanmorgan.dev/feed/feed.xml" rel="self"/>
 	<link href="https://deanmorgan.dev/"/>
-	<updated>2021-10-14T00:00:00Z</updated>
+	<updated>2022-05-23T00:00:00Z</updated>
 	<id>https://deanmorgan.dev/</id>
 	<author>
 		<name>Dean James Morgan</name>
@@ -13,17 +13,172 @@
 	</author>
 	
 	<entry>
-		<title>Falling at the first hurdle</title>
-		<link href="https://deanmorgan.dev/posts/01-falling-at-the-first-hurdle/"/>
-		<updated>2021-10-14T00:00:00Z</updated>
-		<id>https://deanmorgan.dev/posts/01-falling-at-the-first-hurdle/</id>
-		<content type="html">&lt;p&gt;I&#39;ve already fallen at the first hurdle with this site. I started to build it back in May and everything was going well. I had all the best intentions to keep developing it, but then life threw me a curveball that I hadn&#39;t prepared for and that changed everything.&lt;/p&gt;
-&lt;p&gt;Not long after I had started building this website, I decided that I was going to be leaving my role as a Frontend Developer at Flavour Warehouse and move on to a new role at &lt;a href=&quot;https://www.pinpointdesigns.co.uk/&quot;&gt;Pinpoint&lt;/a&gt;, one of the leading Magento 2 agencies in the UK. During the job transition this site got put on the shelf as I wanted to make sure that a) all the work I had done at Flavour Warehouse had been properly documented and handed over to the relevant parties and b) I wanted to make sure I could hit the ground running with my new position at Pinpoint.&lt;/p&gt;
-&lt;p&gt;Now I&#39;ve settled in at Pinpoint, I fired this project back up and suddenly realised that the time that I had spent away from it was enough for me to lose track of where I was at. I am going to need to re-learn some of the things I had already learned previously.&lt;/p&gt;
-&lt;p&gt;Rather than juggling lots of projects, I have always tended to focus on one at a time. However, now that I&#39;ve started working for an agency, I&#39;ve realised that this isn&#39;t a luxury I have anymore and I often find myself swapping between projects on a daily basis. With that in mind, I am also hoping to try and adopt that into my personal projects now and rather than spend weeks on each project at once, break it down and do smaller bits on each in rotation.&lt;/p&gt;
-&lt;p&gt;The other thing I can do to help myself better manage projects would be to improve the way I am documenting my work. So going forwards, I am going to try and make sure that I leave enough time to document everything I have been doing so that if there is ever a long period of time between sessions of work, I should be able to read through the docs and be back up to speed much easier. This will no doubt take some getting used to, but again it is a valueable skillset to have, especially when working in an agency setting.&lt;/p&gt;
-&lt;p&gt;This probably isn&#39;t the most helpful or entertaining of blog posts for anyone who stumbles across it, but for me it will serve as a reminder of how I should be making adjustments to my approach so that I can improve.&lt;/p&gt;
-&lt;p&gt;Let&#39;s see how it goes...&lt;/p&gt;
+		<title>How I Built This Site</title>
+		<link href="https://deanmorgan.dev/posts/01-how-i-built-this-site/"/>
+		<updated>2022-05-23T00:00:00Z</updated>
+		<id>https://deanmorgan.dev/posts/01-how-i-built-this-site/</id>
+		<content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#intro&quot;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#initialising-the-project&quot;&gt;Initialising the project&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cloning-an-11ty-template-project&quot;&gt;Cloning an 11ty template project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-root-files&quot;&gt;Updating root files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modifying-the-directory-structure&quot;&gt;Modifying the directory structure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#setting-up-the-hosting&quot;&gt;Setting up the hosting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#making-it-my-own&quot;&gt;Making it my own&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaning-up&quot;&gt;Cleaning up&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#borrowing-bits-from-html5boilerplate&quot;&gt;Borrowing bits from html5boilerplate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#borrowing-bits-from-harry-roberts--css-wizardry&quot;&gt;Borrowing bits from Harry Roberts @ CSS Wizardry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-a-github-status-badge&quot;&gt;Adding a GitHub status badge&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-the-build&quot;&gt;Updating the build&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#basic-js-bundling&quot;&gt;Basic JS bundling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#basic-scss-support&quot;&gt;Basic SCSS support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#creating-custom-npm-scripts&quot;&gt;Creating custom NPM scripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#testing&quot;&gt;Testing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#lets-start-creating-some-content&quot;&gt;Lets start creating some content&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#creating-my-first-page&quot;&gt;Creating my first page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#my-first-issue-build-missing-css&quot;&gt;My first issue (Build missing CSS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-more-content&quot;&gt;Adding more content&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#changing-the-order-of-the-nav&quot;&gt;Changing the order of the nav&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaning-up-some-more&quot;&gt;Cleaning up some more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#another-issue-missing-page-titles&quot;&gt;Another issue (Missing page titles)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#upgrading-the-build&quot;&gt;Upgrading the build&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#performing-the-upgrade&quot;&gt;Performing the upgrade&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#add-packagelockjson-to-git&quot;&gt;Add packagelock.json to git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#a-bit-more-cleanup-and-maintenance&quot;&gt;A bit more cleanup and maintenance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-page-template-to-use-basenjk&quot;&gt;Updated page template to use base.njk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modified-the-way-post-tags-are-rendered&quot;&gt;Modified the way post tags are rendered&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;intro&quot; tabindex=&quot;-1&quot;&gt;Intro &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#intro&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you&#39;ll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I&#39;ll make some mistakes, and be learning along the way. It&#39;s not going to be pretty, but I&#39;ll try my best to take you on a journey with me as I build this site. Good Luck!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lets Begin&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;initialising-the-project&quot; tabindex=&quot;-1&quot;&gt;Initialising the project &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#initialising-the-project&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Quick precursor, prior to this project I had been using a static site generator I built myself using gulp, which had support for nunjucks, scss and js (via webpack). I&#39;d used this to build various prototype and proeuction sites, but I wanted to add more to it and updating and maintaining it all was becoming a bit too much of a chore for me. I&#39;d heard about other static site builders, looked at the spec for each one and landed on 11ty as my preferred choice. The reasons for this where that it supported a lot of the functionallity that I wanted to add to my site builder.&lt;/p&gt;
+&lt;p&gt;11ty provides a wide range of template projects that you can use as a starter. I looked through some of these and settled one one of the more basic ones. I wanted to use this as an oppurtunity to learn about 11ty, and as such I wanted a very minimal starter.&lt;/p&gt;
+&lt;h3 id=&quot;cloning-an-11ty-template-project&quot; tabindex=&quot;-1&quot;&gt;Cloning an 11ty template project &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cloning-an-11ty-template-project&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/11ty/eleventy-base-blog.git .
+rm -rg .git // I did this so that I could initialise my own git repository
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;updating-root-files&quot; tabindex=&quot;-1&quot;&gt;Updating root files &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-root-files&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated package.json&lt;/li&gt;
+&lt;li&gt;Updated metadata.json&lt;/li&gt;
+&lt;li&gt;Cleaned content from &lt;a href=&quot;http://readme.md/&quot;&gt;readme.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Updated travis.yml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;modifying-the-directory-structure&quot; tabindex=&quot;-1&quot;&gt;Modifying the directory structure &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modifying-the-directory-structure&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Restructured website files&lt;/li&gt;
+&lt;li&gt;Moved all &#39;src&#39; files into a &#39;src&#39; directory&lt;/li&gt;
+&lt;li&gt;Moved &#39;css&#39; and &#39;img&#39; to directories to &#39;src/assets&#39;&lt;/li&gt;
+&lt;li&gt;Created a &#39;_layouts&#39; directory and moved layout files into here&lt;/li&gt;
+&lt;li&gt;Renamed &#39;_includes&#39; to &#39;_components&#39;&lt;/li&gt;
+&lt;li&gt;Updated template paths in all &#39;src&#39; files&lt;/li&gt;
+&lt;li&gt;.eleventy.js&lt;/li&gt;
+&lt;li&gt;Updated path for layoutAlias&lt;/li&gt;
+&lt;li&gt;Updated paths for &#39;css&#39; and &#39;img&#39; passthrough&lt;/li&gt;
+&lt;li&gt;Updated path for 404 page&lt;/li&gt;
+&lt;li&gt;Updated main dir paths&lt;/li&gt;
+&lt;li&gt;Updated .gitignore&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;setting-up-the-hosting&quot; tabindex=&quot;-1&quot;&gt;Setting up the hosting &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#setting-up-the-hosting&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add CNAME file to project root&lt;/li&gt;
+&lt;li&gt;Test build, worked.&lt;/li&gt;
+&lt;li&gt;Added .github/workflows/deploy-and-build.yml&lt;/li&gt;
+&lt;li&gt;1st commit&lt;/li&gt;
+&lt;li&gt;Pushed to remote, triggered action, built site and deployed to new branch... Result!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;making-it-my-own&quot; tabindex=&quot;-1&quot;&gt;Making it my own &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#making-it-my-own&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;cleaning-up&quot; tabindex=&quot;-1&quot;&gt;Cleaning up &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaning-up&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Removed travis.yml and netlify.yml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;borrowing-bits-from-html5boilerplate&quot; tabindex=&quot;-1&quot;&gt;Borrowing bits from html5boilerplate &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#borrowing-bits-from-html5boilerplate&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented rootfiles from html5boilerplate&lt;/li&gt;
+&lt;li&gt;Restructured _layouts/base.njk&lt;/li&gt;
+&lt;li&gt;Added references to new rootfiles from html5boilerplate&lt;/li&gt;
+&lt;li&gt;Updated eleventy.js to copy from src/_rootfiles/ to dist/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;borrowing-bits-from-harry-roberts-%40-css-wizardry&quot; tabindex=&quot;-1&quot;&gt;Borrowing bits from Harry Roberts @ CSS Wizardry &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#borrowing-bits-from-harry-roberts-%40-css-wizardry&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Restructured header to mirror config at csswizardry&lt;/li&gt;
+&lt;li&gt;Added Google Analytics via method used on csswizardy&lt;/li&gt;
+&lt;li&gt;Added performance logging to GA via method on csswizardry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;adding-a-github-status-badge&quot; tabindex=&quot;-1&quot;&gt;Adding a GitHub status badge &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-a-github-status-badge&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added github action status badge to &lt;a href=&quot;http://readme.md/&quot;&gt;readme.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;updating-the-build&quot; tabindex=&quot;-1&quot;&gt;Updating the build &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-the-build&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;basic-js-bundling&quot; tabindex=&quot;-1&quot;&gt;Basic JS bundling &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#basic-js-bundling&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated 11ty config to copy js files from src/assets/js&lt;/li&gt;
+&lt;li&gt;Added main.js to base.njk header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;basic-scss-support&quot; tabindex=&quot;-1&quot;&gt;Basic SCSS support &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#basic-scss-support&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Installed npm packages for processing scss/css&lt;/li&gt;
+&lt;li&gt;Replaced css files in base.njk with new main.css compiled from scss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;creating-custom-npm-scripts&quot; tabindex=&quot;-1&quot;&gt;Creating custom NPM scripts &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#creating-custom-npm-scripts&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Created new npm scripts to clear &#39;dist&#39; and build/watch/post-process scss/css&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;testing&quot; tabindex=&quot;-1&quot;&gt;Testing &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#testing&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add code testing with Mocha&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;lets-start-creating-some-content&quot; tabindex=&quot;-1&quot;&gt;Lets start creating some content &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#lets-start-creating-some-content&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;creating-my-first-page&quot; tabindex=&quot;-1&quot;&gt;Creating my first page &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#creating-my-first-page&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Started by updating the content on my about page&lt;/p&gt;
+&lt;h3 id=&quot;my-first-issue-(build-missing-css)&quot; tabindex=&quot;-1&quot;&gt;My first issue (Build missing CSS) &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#my-first-issue-(build-missing-css)&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The built script was missing the parts to compile scss&lt;/p&gt;
+&lt;p&gt;Original&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;build&amp;quot;: &amp;quot;eleventy&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Modified&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;build&amp;quot;: &amp;quot;npm-run-all clean:dist clean:assets build:js build:scss build:site&amp;quot;,
+&amp;quot;build:site&amp;quot;: &amp;quot;eleventy&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;adding-more-content&quot; tabindex=&quot;-1&quot;&gt;Adding more content &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#adding-more-content&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I then added my first test blog post... victory&lt;br /&gt;
+I then continued to update the content of the about page&lt;/p&gt;
+&lt;h3 id=&quot;changing-the-order-of-the-nav&quot; tabindex=&quot;-1&quot;&gt;Changing the order of the nav &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#changing-the-order-of-the-nav&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Modified the &#39;order&#39; of pages in the front matter data&lt;/p&gt;
+&lt;h3 id=&quot;cleaning-up-some-more&quot; tabindex=&quot;-1&quot;&gt;Cleaning up some more &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaning-up-some-more&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Noticed some files included in the build dir that didn&#39;t need to be there, these where coming from the &lt;code&gt;_rootfiles&lt;/code&gt; directory (from html5boilerplate)&lt;/p&gt;
+&lt;h3 id=&quot;another-issue-(missing-page-titles)&quot; tabindex=&quot;-1&quot;&gt;Another issue (Missing page titles) &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#another-issue-(missing-page-titles)&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Noticed some pages where missing titles, so I went and added them to the pages front matter data, for some reason I can&#39;t seem to get it working on the tags page &lt;code&gt;/page-list&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;upgrading-the-build&quot; tabindex=&quot;-1&quot;&gt;Upgrading the build &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#upgrading-the-build&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;performing-the-upgrade&quot; tabindex=&quot;-1&quot;&gt;Performing the upgrade &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#performing-the-upgrade&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Ran &lt;code&gt;npm outdated&lt;/code&gt; to generate a list of all outdated packages&lt;br /&gt;
+Ran &lt;code&gt;npm update&lt;/code&gt; to update all packages&lt;br /&gt;
+Tested and everything seemed fine initially&lt;/p&gt;
+&lt;h3 id=&quot;add-packagelock.json-to-git&quot; tabindex=&quot;-1&quot;&gt;Add packagelock.json to git &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#add-packagelock.json-to-git&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For some reason, this file was added to the &lt;code&gt;.gitignore&lt;/code&gt; file, so I removed it and then committed the change.&lt;/p&gt;
+&lt;h3 id=&quot;a-bit-more-cleanup-and-maintenance&quot; tabindex=&quot;-1&quot;&gt;A bit more cleanup and maintenance &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#a-bit-more-cleanup-and-maintenance&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This project came with two stylesheets initially, I merged both of them together, deleted the redundant file and then update &lt;code&gt;layout.njk&lt;/code&gt; to remove the reference.&lt;/p&gt;
+&lt;h3 id=&quot;updated-page-template-to-use-base.njk&quot; tabindex=&quot;-1&quot;&gt;Updated page template to use base.njk &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-page-template-to-use-base.njk&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Originally most of the pages where using a layout file &lt;code&gt;home.njk&lt;/code&gt; which I replaced with &lt;code&gt;base.njk&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;modified-the-way-post-tags-are-rendered&quot; tabindex=&quot;-1&quot;&gt;Modified the way post tags are rendered &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modified-the-way-post-tags-are-rendered&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Made changes to &lt;code&gt;post.njk&lt;/code&gt; and &lt;code&gt;postslists.njk&lt;/code&gt; to change how tags are output.&lt;/p&gt;
 </content>
 	</entry>
 </feed>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <script>performance.mark('HEAD Start');</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Built This Site</title>
+    <link rel="preconnect" href="https://deanmorgan.dev" crossorigin>
+
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-90103445-1', {'siteSpeedSampleRate': 100});
+      ga('send', 'pageview');
+    </script>
+
+    <script>performance.mark('CSS Start');</script>
+    <link rel="stylesheet" href="/assets/css/tasty.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Dean Morgan">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Dean Morgan">
+    <script>
+      performance.mark('CSS End');
+      performance.measure('CSS Time', 'CSS Start', 'CSS End');
+    </script>
+
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="/assets/js/main.js" async></script>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@deanjmorgan">
+    <meta name="twitter:domain" content="deanmorgan.dev">
+    <meta name="twitter:creator" content="@deanjmorgan">
+    <meta name="twitter:title" content="deanmorgan.dev">
+    <meta name="twitter:image" content="https://deanmorgan.dev/logo.png">
+    <meta name="twitter:description" content="Articles from a front-end developer on architecture, scalability and performance.">
+    <meta property="og:title" content="deanmorgan.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deanmorgan.dev">
+    <meta property="og:image" content="https://deanmorgan.dev/logo.png">
+
+    <link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <meta name="apple-mobile-web-app-title" content="deanmorgan">
+    <meta name="description" content="Follow the ramblings of a crazed developer trying to document the development of this site. It&#39;s not going to be a fun ride, but I&#39;ll try my best to take you on a journey with me as I build this site. Good Luck!">
+
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Place favicon.ico in the root directory -->
+    <script>
+      performance.mark('HEAD End');
+      performance.measure('HEAD Time', 'HEAD Start', 'HEAD End');
+    </script>
+  </head>
+
+  <body class="page-layout u-padding-small">
+    <header>
+      <h1 class="site-title"><a href="/">Dean Morgan</a></h1>
+      <ul class="nav o-list-bare">
+        <li class="nav-item o-list-bare__item"><a href="/">Home</a></li>
+        <li class="nav-item o-list-bare__item"><a href="/about/">About</a></li>
+        <li class="nav-item o-list-bare__item"><a href="/posts/">Archive</a></li>
+      </ul>
+    </header>
+
+    <script>performance.mark('Content Start')</script>
+
+    <main>
+      <h1>How I Built This Site</h1>
+
+<div class="post-date">
+  <span>Posted on: </span><time datetime="2022-05-23">23 May 2022</time>
+</div>
+<div class="post-tags"><a href="/tags/11ty/" class="tag tag--11ty">11ty</a><a href="/tags/scss/" class="tag tag--scss">scss</a><a href="/tags/webperf/" class="tag tag--webperf">webperf</a><a href="/tags/github/" class="tag tag--github">github</a><a href="/tags/npm/" class="tag tag--npm">npm</a>
+</div>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#initialising-the-project">Initialising the project</a>
+<ul>
+<li><a href="#cloning-an-11ty-template-project">Cloning an 11ty template project</a></li>
+<li><a href="#updating-root-files">Updating root files</a></li>
+<li><a href="#modifying-the-directory-structure">Modifying the directory structure</a></li>
+<li><a href="#setting-up-the-hosting">Setting up the hosting</a></li>
+</ul>
+</li>
+<li><a href="#making-it-my-own">Making it my own</a>
+<ul>
+<li><a href="#cleaning-up">Cleaning up</a></li>
+<li><a href="#borrowing-bits-from-html5boilerplate">Borrowing bits from html5boilerplate</a></li>
+<li><a href="#borrowing-bits-from-harry-roberts--css-wizardry">Borrowing bits from Harry Roberts @ CSS Wizardry</a></li>
+<li><a href="#adding-a-github-status-badge">Adding a GitHub status badge</a></li>
+</ul>
+</li>
+<li><a href="#updating-the-build">Updating the build</a>
+<ul>
+<li><a href="#basic-js-bundling">Basic JS bundling</a></li>
+<li><a href="#basic-scss-support">Basic SCSS support</a></li>
+<li><a href="#creating-custom-npm-scripts">Creating custom NPM scripts</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul>
+</li>
+<li><a href="#lets-start-creating-some-content">Lets start creating some content</a>
+<ul>
+<li><a href="#creating-my-first-page">Creating my first page</a></li>
+<li><a href="#my-first-issue-build-missing-css">My first issue (Build missing CSS)</a></li>
+<li><a href="#adding-more-content">Adding more content</a></li>
+<li><a href="#changing-the-order-of-the-nav">Changing the order of the nav</a></li>
+<li><a href="#cleaning-up-some-more">Cleaning up some more</a></li>
+<li><a href="#another-issue-missing-page-titles">Another issue (Missing page titles)</a></li>
+</ul>
+</li>
+<li><a href="#upgrading-the-build">Upgrading the build</a>
+<ul>
+<li><a href="#performing-the-upgrade">Performing the upgrade</a></li>
+<li><a href="#add-packagelockjson-to-git">Add packagelock.json to git</a></li>
+<li><a href="#a-bit-more-cleanup-and-maintenance">A bit more cleanup and maintenance</a></li>
+<li><a href="#updated-page-template-to-use-basenjk">Updated page template to use base.njk</a></li>
+<li><a href="#modified-the-way-post-tags-are-rendered">Modified the way post tags are rendered</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="intro" tabindex="-1">Intro <a class="direct-link" href="#intro">#</a></h2>
+<p>This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you'll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I'll make some mistakes, and be learning along the way. It's not going to be pretty, but I'll try my best to take you on a journey with me as I build this site. Good Luck!</p>
+<p><strong>Lets Begin</strong></p>
+<h2 id="initialising-the-project" tabindex="-1">Initialising the project <a class="direct-link" href="#initialising-the-project">#</a></h2>
+<p>Quick precursor, prior to this project I had been using a static site generator I built myself using gulp, which had support for nunjucks, scss and js (via webpack). I'd used this to build various prototype and proeuction sites, but I wanted to add more to it and updating and maintaining it all was becoming a bit too much of a chore for me. I'd heard about other static site builders, looked at the spec for each one and landed on 11ty as my preferred choice. The reasons for this where that it supported a lot of the functionallity that I wanted to add to my site builder.</p>
+<p>11ty provides a wide range of template projects that you can use as a starter. I looked through some of these and settled one one of the more basic ones. I wanted to use this as an oppurtunity to learn about 11ty, and as such I wanted a very minimal starter.</p>
+<h3 id="cloning-an-11ty-template-project" tabindex="-1">Cloning an 11ty template project <a class="direct-link" href="#cloning-an-11ty-template-project">#</a></h3>
+<pre><code>git clone https://github.com/11ty/eleventy-base-blog.git .
+rm -rg .git // I did this so that I could initialise my own git repository
+</code></pre>
+<h3 id="updating-root-files" tabindex="-1">Updating root files <a class="direct-link" href="#updating-root-files">#</a></h3>
+<ul>
+<li>Updated package.json</li>
+<li>Updated metadata.json</li>
+<li>Cleaned content from <a href="http://readme.md">readme.md</a></li>
+<li>Updated travis.yml</li>
+</ul>
+<h3 id="modifying-the-directory-structure" tabindex="-1">Modifying the directory structure <a class="direct-link" href="#modifying-the-directory-structure">#</a></h3>
+<ul>
+<li>Restructured website files</li>
+<li>Moved all 'src' files into a 'src' directory</li>
+<li>Moved 'css' and 'img' to directories to 'src/assets'</li>
+<li>Created a '_layouts' directory and moved layout files into here</li>
+<li>Renamed '_includes' to '_components'</li>
+<li>Updated template paths in all 'src' files</li>
+<li>.eleventy.js</li>
+<li>Updated path for layoutAlias</li>
+<li>Updated paths for 'css' and 'img' passthrough</li>
+<li>Updated path for 404 page</li>
+<li>Updated main dir paths</li>
+<li>Updated .gitignore</li>
+</ul>
+<h3 id="setting-up-the-hosting" tabindex="-1">Setting up the hosting <a class="direct-link" href="#setting-up-the-hosting">#</a></h3>
+<ul>
+<li>Add CNAME file to project root</li>
+<li>Test build, worked.</li>
+<li>Added .github/workflows/deploy-and-build.yml</li>
+<li>1st commit</li>
+<li>Pushed to remote, triggered action, built site and deployed to new branch... Result!</li>
+</ul>
+<h2 id="making-it-my-own" tabindex="-1">Making it my own <a class="direct-link" href="#making-it-my-own">#</a></h2>
+<h3 id="cleaning-up" tabindex="-1">Cleaning up <a class="direct-link" href="#cleaning-up">#</a></h3>
+<ul>
+<li>Removed travis.yml and netlify.yml</li>
+</ul>
+<h3 id="borrowing-bits-from-html5boilerplate" tabindex="-1">Borrowing bits from html5boilerplate <a class="direct-link" href="#borrowing-bits-from-html5boilerplate">#</a></h3>
+<ul>
+<li>Implemented rootfiles from html5boilerplate</li>
+<li>Restructured _layouts/base.njk</li>
+<li>Added references to new rootfiles from html5boilerplate</li>
+<li>Updated eleventy.js to copy from src/_rootfiles/ to dist/</li>
+</ul>
+<h3 id="borrowing-bits-from-harry-roberts-%40-css-wizardry" tabindex="-1">Borrowing bits from Harry Roberts @ CSS Wizardry <a class="direct-link" href="#borrowing-bits-from-harry-roberts-%40-css-wizardry">#</a></h3>
+<ul>
+<li>Restructured header to mirror config at csswizardry</li>
+<li>Added Google Analytics via method used on csswizardy</li>
+<li>Added performance logging to GA via method on csswizardry</li>
+</ul>
+<h3 id="adding-a-github-status-badge" tabindex="-1">Adding a GitHub status badge <a class="direct-link" href="#adding-a-github-status-badge">#</a></h3>
+<ul>
+<li>Added github action status badge to <a href="http://readme.md">readme.md</a></li>
+</ul>
+<h2 id="updating-the-build" tabindex="-1">Updating the build <a class="direct-link" href="#updating-the-build">#</a></h2>
+<h3 id="basic-js-bundling" tabindex="-1">Basic JS bundling <a class="direct-link" href="#basic-js-bundling">#</a></h3>
+<ul>
+<li>Updated 11ty config to copy js files from src/assets/js</li>
+<li>Added main.js to base.njk header</li>
+</ul>
+<h3 id="basic-scss-support" tabindex="-1">Basic SCSS support <a class="direct-link" href="#basic-scss-support">#</a></h3>
+<ul>
+<li>Installed npm packages for processing scss/css</li>
+<li>Replaced css files in base.njk with new main.css compiled from scss</li>
+</ul>
+<h3 id="creating-custom-npm-scripts" tabindex="-1">Creating custom NPM scripts <a class="direct-link" href="#creating-custom-npm-scripts">#</a></h3>
+<ul>
+<li>Created new npm scripts to clear 'dist' and build/watch/post-process scss/css</li>
+</ul>
+<h3 id="testing" tabindex="-1">Testing <a class="direct-link" href="#testing">#</a></h3>
+<ul>
+<li>Add code testing with Mocha</li>
+</ul>
+<h2 id="lets-start-creating-some-content" tabindex="-1">Lets start creating some content <a class="direct-link" href="#lets-start-creating-some-content">#</a></h2>
+<h3 id="creating-my-first-page" tabindex="-1">Creating my first page <a class="direct-link" href="#creating-my-first-page">#</a></h3>
+<p>Started by updating the content on my about page</p>
+<h3 id="my-first-issue-(build-missing-css)" tabindex="-1">My first issue (Build missing CSS) <a class="direct-link" href="#my-first-issue-(build-missing-css)">#</a></h3>
+<p>The built script was missing the parts to compile scss</p>
+<p>Original</p>
+<pre><code>&quot;build&quot;: &quot;eleventy&quot;,
+</code></pre>
+<p>Modified</p>
+<pre><code>&quot;build&quot;: &quot;npm-run-all clean:dist clean:assets build:js build:scss build:site&quot;,
+&quot;build:site&quot;: &quot;eleventy&quot;,
+</code></pre>
+<h3 id="adding-more-content" tabindex="-1">Adding more content <a class="direct-link" href="#adding-more-content">#</a></h3>
+<p>I then added my first test blog post... victory<br>
+I then continued to update the content of the about page</p>
+<h3 id="changing-the-order-of-the-nav" tabindex="-1">Changing the order of the nav <a class="direct-link" href="#changing-the-order-of-the-nav">#</a></h3>
+<p>Modified the 'order' of pages in the front matter data</p>
+<h3 id="cleaning-up-some-more" tabindex="-1">Cleaning up some more <a class="direct-link" href="#cleaning-up-some-more">#</a></h3>
+<p>Noticed some files included in the build dir that didn't need to be there, these where coming from the <code>_rootfiles</code> directory (from html5boilerplate)</p>
+<h3 id="another-issue-(missing-page-titles)" tabindex="-1">Another issue (Missing page titles) <a class="direct-link" href="#another-issue-(missing-page-titles)">#</a></h3>
+<p>Noticed some pages where missing titles, so I went and added them to the pages front matter data, for some reason I can't seem to get it working on the tags page <code>/page-list</code>.</p>
+<h2 id="upgrading-the-build" tabindex="-1">Upgrading the build <a class="direct-link" href="#upgrading-the-build">#</a></h2>
+<h3 id="performing-the-upgrade" tabindex="-1">Performing the upgrade <a class="direct-link" href="#performing-the-upgrade">#</a></h3>
+<p>Ran <code>npm outdated</code> to generate a list of all outdated packages<br>
+Ran <code>npm update</code> to update all packages<br>
+Tested and everything seemed fine initially</p>
+<h3 id="add-packagelock.json-to-git" tabindex="-1">Add packagelock.json to git <a class="direct-link" href="#add-packagelock.json-to-git">#</a></h3>
+<p>For some reason, this file was added to the <code>.gitignore</code> file, so I removed it and then committed the change.</p>
+<h3 id="a-bit-more-cleanup-and-maintenance" tabindex="-1">A bit more cleanup and maintenance <a class="direct-link" href="#a-bit-more-cleanup-and-maintenance">#</a></h3>
+<p>This project came with two stylesheets initially, I merged both of them together, deleted the redundant file and then update <code>layout.njk</code> to remove the reference.</p>
+<h3 id="updated-page-template-to-use-base.njk" tabindex="-1">Updated page template to use base.njk <a class="direct-link" href="#updated-page-template-to-use-base.njk">#</a></h3>
+<p>Originally most of the pages where using a layout file <code>home.njk</code> which I replaced with <code>base.njk</code>.</p>
+<h3 id="modified-the-way-post-tags-are-rendered" tabindex="-1">Modified the way post tags are rendered <a class="direct-link" href="#modified-the-way-post-tags-are-rendered">#</a></h3>
+<p>Made changes to <code>post.njk</code> and <code>postslists.njk</code> to change how tags are output.</p>
+
+
+    </main>
+
+    
+
+    <script>performance.mark('Content End')</script>
+
+    <footer>
+      <div>
+        <a href="https://github.com/DeanJMorgan">
+          <img src="/assets/img/svg/icons/icons8-github-64.svg" alt="DeanJMorgan @ GitHub" class="u-margin-right">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div>
+        <a href="https://codepen.io/DeanMorgan">
+          <img src="/assets/img/svg/icons/icons8-codepen-64.svg" alt="deanmorgan @ CodePen" class="u-margin-right">
+          <span>CodePen</span>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.npmjs.com/~deanmorgan">
+          <img src="/assets/img/svg/icons/icons8-npm-64.svg" alt="deanmorgan @ NPM" class="u-margin-right">
+          <span>NPM</span>
+        </a>
+      </div>
+      <div>
+        <a href="https://stackoverflow.com/users/8058501/dean-morgan">
+          <img src="/assets/img/svg/icons/icons8-stack-overflow-64.svg" alt="deanmorgan @ Stack Overflow" class="u-margin-right">
+          <span>Stack Overflow</span>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/dean-morgan/">
+          <img src="/assets/img/svg/icons/icons8-linkedin-64.svg" alt="Dean Morgan @ LinkedIn" class="u-margin-right">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <div>
+        <a href="">
+          <img src="/assets/img/svg/icons/icons8-rss-logo-64.svg" alt="deanmorgan.dev RSS Feed" class="u-margin-right">
+          <span>RSS Feed</span>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Current page: /posts/01-how-i-built-this-site/ -->
+
+    <script>
+      performance.measure('Content Time', 'Content Start', 'Content End');
+      window.addEventListener('load', function() {
+
+        // Only progress if the browser supports User Timings
+        if (window.performance) {
+
+          // Store URL params for debugging later
+          var params = (new URL(document.location)).searchParams;
+
+          // Loop through all performance entries we’ve captured
+          perfEntries = performance.getEntries();
+          for (i = 0; i < perfEntries.length; i++) {
+
+            // Only act on mark or measure timings
+            if (perfEntries[i].entryType == 'mark' || perfEntries[i].entryType == 'measure') {
+
+              // For marks we need the startTime; for measures we need the duration
+              var timingType = perfEntries[i].entryType == 'mark' ? perfEntries[i].startTime : perfEntries[i].duration;
+
+              // Send the data off to Google Analytics and store in our ‘Custom Timings’ category
+              ga('send', 'timing', 'Custom Timings', perfEntries[i].name, timingType);
+
+              // Log the marks and measures if we have ?debug=true on the URL
+              if (params.get('debug')) {
+                console.log(perfEntries[i].name + ': ' + timingType);
+              }
+            }
+          }
+        }
+      }());
+    </script>
+  </body>
+</html>
