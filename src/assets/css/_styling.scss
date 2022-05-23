@@ -39,11 +39,15 @@ body {
 }
 
 .post-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
 .tag {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-right: 1rem;
     padding: 0.25rem 0.5rem;
     background-color: #fff;
@@ -56,5 +60,43 @@ body {
 
     &:hover {
         border-color: #1b68d5;
+    }
+
+    &::before {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      background-size: contain;
+    }
+    
+    &--11ty:before {
+      content: "";
+      background-image: url(/assets/img/svg/icons/icons8-html-5-50.svg);
+    }
+
+    &--github:before {
+      content: "";
+      background-image: url(/assets/img/svg/icons/icons8-github-50.svg);
+    }
+
+    &--scss:before {
+      content: "";
+      background-image: url(/assets/img/svg/icons/icons8-sass-50.svg);
+    }
+
+    &--npm:before {
+      content: "";
+      background-image: url(/assets/img/svg/icons/icons8-npm-50.svg);
+    }
+
+    &--webperf:before {
+      content: "";
+      background-image: url(/assets/img/svg/icons/icons8-chrome-50.svg);
+    }
+
+    &--npm:before {
+      content: "";
+      background-image: url(/assets/img/svg/icons/icons8-npm-50.svg);
     }
 }

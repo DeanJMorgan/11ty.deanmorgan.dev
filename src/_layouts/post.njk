@@ -10,7 +10,7 @@ templateClass: page-layout--post
 <div class="post-tags">
 {%- for tag in tags | filterTagList -%}
 {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+<a href="{{ tagUrl | url }}" class="tag tag--{{ tag }}">{{ tag }}</a>
 {%- endfor %}
 </div>
 {{ content | safe }}
