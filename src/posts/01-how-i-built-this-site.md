@@ -12,7 +12,13 @@ layout: post
 templateClass: u-padding-small
 ---
 
-- [Intro](#intro)
+## Intro<!-- omit in toc -->
+This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you'll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I'll make some mistakes, and be learning along the way. It's not going to be pretty, but I'll try my best to take you on a journey with me as I build this site. Good Luck!
+
+**Lets Begin...**
+
+---
+
 - [Initialising the project](#initialising-the-project)
   - [Cloning an 11ty template project](#cloning-an-11ty-template-project)
   - [Updating root files](#updating-root-files)
@@ -41,13 +47,23 @@ templateClass: u-padding-small
   - [A bit more cleanup and maintenance](#a-bit-more-cleanup-and-maintenance)
   - [Updated page template to use base.njk](#updated-page-template-to-use-basenjk)
   - [Modified the way post tags are rendered](#modified-the-way-post-tags-are-rendered)
+- [Adding tasty-css](#adding-tasty-css)
+  - [Adding tasty-css as a dependency](#adding-tasty-css-as-a-dependency)
+  - [Autoprefixing and minifying](#autoprefixing-and-minifying)
+  - [Linting scss](#linting-scss)
+  - [Include tasty-css on the pages](#include-tasty-css-on-the-pages)
+  - [Adding tasty-css to npm](#adding-tasty-css-to-npm)
+- [More maintenance](#more-maintenance)
+  - [Updating packages (again)](#updating-packages-again)
+  - [Removed unused css](#removed-unused-css)
+  - [Added svg icons](#added-svg-icons)
+    - [Added icons to tags](#added-icons-to-tags)
+    - [Added icons to footer](#added-icons-to-footer)
+  - [Fixed minor layout styling issues](#fixed-minor-layout-styling-issues)
+  - [Added styling for pre and code elements](#added-styling-for-pre-and-code-elements)
+- [Created this post](#created-this-post)
 
 ---
-
-## Intro
-This is my attempt to log the process of how this site was built. For now, it will serve as a place for me to quickly log the process as I work along. The goal is to eventually repurpose this as a proper blog post, well formatted and written in a way that is easy to follow. For now though, you'll just have to bare with the ramblings of a slightly mad developer sketching down notes in a journal like fashion. I'll make some mistakes, and be learning along the way. It's not going to be pretty, but I'll try my best to take you on a journey with me as I build this site. Good Luck!
-
-**Lets Begin**
 
 ## Initialising the project
 Quick precursor, prior to this project I had been using a static site generator I built myself using gulp, which had support for nunjucks, scss and js (via webpack). I'd used this to build various prototype and proeuction sites, but I wanted to add more to it and updating and maintaining it all was becoming a bit too much of a chore for me. I'd heard about other static site builders, looked at the spec for each one and landed on 11ty as my preferred choice. The reasons for this where that it supported a lot of the functionallity that I wanted to add to my site builder.
@@ -173,3 +189,41 @@ Originally most of the pages where using a layout file `home.njk` which I replac
 ### Modified the way post tags are rendered
 Made changes to `post.njk` and `postslists.njk` to change how tags are output.
 
+## Adding tasty-css
+
+### Adding tasty-css as a dependency
+Added tasty-css as a dependency via the GitHub repo
+
+### Autoprefixing and minifying
+Installed postcss and some plugins to faciliate in autoprefixing and minifying css
+
+### Linting scss
+Installed stylelint via npm
+
+### Include tasty-css on the pages
+Updated the head to include tasty-css
+Modifed tasty.scss to include additional partials
+
+### Adding tasty-css to npm
+It became clear I'd need to be able to version control tasty-css as it's in very early stages of development. I had to learn how to release the package to npm,
+
+## More maintenance
+
+### Updating packages (again)
+Updated various packages to their latest version
+
+### Removed unused css
+Commented out all tasty-css partials that are not currently in use
+
+### Added svg icons
+
+#### Added icons to tags
+
+#### Added icons to footer
+
+### Fixed minor layout styling issues
+
+### Added styling for pre and code elements
+
+## Created this post
+All the writing in this post before this point was written 'after the fact'. From this point forward, the plan is to maintain this doc as I go along. There are parts I need to go back and edit, and I will do that eventually, but the most important part at this stage is to make sure that anything done from here onwards is done on this post, at the time it happens.
