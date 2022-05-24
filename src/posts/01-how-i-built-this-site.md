@@ -22,6 +22,10 @@ This is my attempt to log the process of how this site was built. For now, it wi
 - [Initialising the project](#initialising-the-project)
   - [Cloning an 11ty template project](#cloning-an-11ty-template-project)
   - [Updating root files](#updating-root-files)
+    - [Updated package.json](#updated-packagejson)
+    - [Updated metadata.json](#updated-metadatajson)
+    - [Cleaned content from readme.md](#cleaned-content-from-readmemd)
+    - [Updated travis.yml](#updated-travisyml)
   - [Modifying the directory structure](#modifying-the-directory-structure)
   - [Setting up the hosting](#setting-up-the-hosting)
 - [Making it my own](#making-it-my-own)
@@ -77,12 +81,29 @@ rm -rg .git // I did this so that I could initialise my own git repository
 ```
 
 ### Updating root files
-- Updated package.json
-- Updated metadata.json
-- Cleaned content from readme.md
-- Updated travis.yml
 
+#### Updated package.json
+Because I cloned this project initially, I needed to modify the `package.json` to include the correct data for this project, as you would if you ran `npm init` and followed the guided process.
+
+#### Updated metadata.json
+The `metadata.json` file is used to add some basic data to the site, such as the url, page title, language etc. Again, this data needed to be modified to suit this project.
+
+#### Cleaned content from readme.md
+I didn't want to use the `readme.md` from the cloned project, so I empited the contents out ready for me to write my own.
+#### Updated travis.yml
+There where some project specific data in the `travis.yml` file, which I also updated to match this project.
 ### Modifying the directory structure
+I wasn't keen on the original directory structure of the project. I like to keep my `src` and `dist` directories seperate from each other, wheras this project didn't use a `src` directory and instead served things from the root.
+
+I also prefer to have my assets contained within an `assets` directory where I can store my imgs, fonts, css and js files.
+
+The directory structure had a directory within `src` called `includes` which would be used to store template files, and within here there was a subdirectory called `layouts`. I was not keen on this so I decided to move layouts to the `src` directory, and rename `includes` to `components` as this is more similar of a structure to the gulp based system I had built myself. These changes meant I had to edit a lot of the references to these directories within the other template files.
+
+The next task was to make some modifications to the `eleventy.js` file. This file is used by 11ty as a configuration for the build. I  cannot remember all the changes made here at the time of writing, but I will update this section once I have verified what work was done here.
+
+Finally, I updated the `.gitignore` file, I believe part of my reason for doing this was to stop 11ty from including certain files within the build. Again, I cannot remember this for certain just yet, but will update this post once I have reviewed the work done on the previous step.
+
+<!--
 - Restructured website files
 - Moved all 'src' files into a 'src' directory
 - Moved 'css' and 'img' to directories to 'src/assets'
@@ -95,8 +116,11 @@ rm -rg .git // I did this so that I could initialise my own git repository
 - Updated path for 404 page
 - Updated main dir paths
 - Updated .gitignore
+- -->
 
 ### Setting up the hosting
+The next task was to configure the hosting. I knew I wanted to host the site via GitHub pages. The main reason for this was as a learning excercise. I'd seen it done previously for project sites but had never gotten round to putting it into practice. I also wanted to use this oppurtunity to experiment with GitHub actions as this is another area that I hadn't had the oppurtunity to practice. It would be been very easy to set up a simple vhost on one of my servers and upload the projects `dist` directory via FTP or SSH, but I've done that plenty of times before, this time I wanted automation to handle all that. Updating the site should be as simple as commiting a change to the GitHub repo.
+
 - Add CNAME file to project root
 - Test build, worked.
 - Added .github/workflows/deploy-and-build.yml
@@ -106,13 +130,24 @@ rm -rg .git // I did this so that I could initialise my own git repository
 ## Making it my own
 
 ### Cleaning up
-- Removed travis.yml and netlify.yml
+As I was using GitHub actions, I didn't really need either the `travis.yml` or `netlify.yml` files, so I deleted them
+<!-- - Removed travis.yml and netlify.yml -->
 
 ### Borrowing bits from html5boilerplate
+I've liked using the html5boilerplate as a starting point for projects. It doesn't do much, but makes for a very clean jumpoff point that can be moulded into anything, whilst covering a lot of points that I would probably forget about (such as `site.webmanifest`). 
+
+I started by cloning the repository into a sub-directory of the `src` called `_rootfiles`, and again ran `rm -rf .git` to clear out the initial git repository.
+
+I then updated `_layouts/base.njk` to include some of the document structure from the html5boilerplate `index.html`.
+
+Finally, I updated `eleventy.js` to copy the contents of `_rootfiles` into the root of the `dist` directory during the build.
+
+<!-- 
 - Implemented rootfiles from html5boilerplate
 - Restructured _layouts/base.njk
 - Added references to new rootfiles from html5boilerplate
 - Updated eleventy.js to copy from src/_rootfiles/ to dist/
+-->
 
 ### Borrowing bits from Harry Roberts @ CSS Wizardry
 - Restructured header to mirror config at csswizardry
