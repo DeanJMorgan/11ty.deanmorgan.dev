@@ -66,7 +66,7 @@ The following is a list of software and/or tools regularly during my day-to-day 
 
 This site is built using 11ty (eleventy), an open source static site generator and is hosted on GitHub pages. The build process includes support for Sass and Javascript compilation and there is also support for tests powered by Mocha.
 
-Throughout the development of this website, I will be documenting the development and techniques used to build this site, which will be available to read as part of a case study series.
+Throughout the development of this website, I will be documenting the development and techniques used to build this site, which will be available to read as part of a case study series. Currently, I am logging my development on the blog post, [How I Built This Site](/posts/01-how-i-built-this-site/).
 
 # Projects I am working on
 
