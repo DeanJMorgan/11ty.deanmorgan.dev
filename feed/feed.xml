@@ -25,7 +25,14 @@
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#initialising-the-project&quot;&gt;Initialising the project&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cloning-an-11ty-template-project&quot;&gt;Cloning an 11ty template project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-root-files&quot;&gt;Updating root files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-root-files&quot;&gt;Updating root files&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-packagejson&quot;&gt;Updated package.json&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-metadatajson&quot;&gt;Updated metadata.json&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaned-content-from-readmemd&quot;&gt;Cleaned content from readme.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-travisyml&quot;&gt;Updated travis.yml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modifying-the-directory-structure&quot;&gt;Modifying the directory structure&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#setting-up-the-hosting&quot;&gt;Setting up the hosting&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -99,28 +106,36 @@
 rm -rg .git // I did this so that I could initialise my own git repository
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;updating-root-files&quot; tabindex=&quot;-1&quot;&gt;Updating root files &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updating-root-files&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Updated package.json&lt;/li&gt;
-&lt;li&gt;Updated metadata.json&lt;/li&gt;
-&lt;li&gt;Cleaned content from &lt;a href=&quot;http://readme.md/&quot;&gt;readme.md&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Updated travis.yml&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;updated-package.json&quot; tabindex=&quot;-1&quot;&gt;Updated package.json &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-package.json&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Because I cloned this project initially, I needed to modify the &lt;code&gt;package.json&lt;/code&gt; to include the correct data for this project, as you would if you ran &lt;code&gt;npm init&lt;/code&gt; and followed the guided process.&lt;/p&gt;
+&lt;h4 id=&quot;updated-metadata.json&quot; tabindex=&quot;-1&quot;&gt;Updated metadata.json &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-metadata.json&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;The &lt;code&gt;metadata.json&lt;/code&gt; file is used to add some basic data to the site, such as the url, page title, language etc. Again, this data needed to be modified to suit this project.&lt;/p&gt;
+&lt;h4 id=&quot;cleaned-content-from-readme.md&quot; tabindex=&quot;-1&quot;&gt;Cleaned content from &lt;a href=&quot;http://readme.md/&quot;&gt;readme.md&lt;/a&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaned-content-from-readme.md&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;I didn&#39;t want to use the &lt;code&gt;readme.md&lt;/code&gt; from the cloned project, so I empited the contents out ready for me to write my own.&lt;/p&gt;
+&lt;h4 id=&quot;updated-travis.yml&quot; tabindex=&quot;-1&quot;&gt;Updated travis.yml &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#updated-travis.yml&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;There where some project specific data in the &lt;code&gt;travis.yml&lt;/code&gt; file, which I also updated to match this project.&lt;/p&gt;
 &lt;h3 id=&quot;modifying-the-directory-structure&quot; tabindex=&quot;-1&quot;&gt;Modifying the directory structure &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#modifying-the-directory-structure&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Restructured website files&lt;/li&gt;
-&lt;li&gt;Moved all &#39;src&#39; files into a &#39;src&#39; directory&lt;/li&gt;
-&lt;li&gt;Moved &#39;css&#39; and &#39;img&#39; to directories to &#39;src/assets&#39;&lt;/li&gt;
-&lt;li&gt;Created a &#39;_layouts&#39; directory and moved layout files into here&lt;/li&gt;
-&lt;li&gt;Renamed &#39;_includes&#39; to &#39;_components&#39;&lt;/li&gt;
-&lt;li&gt;Updated template paths in all &#39;src&#39; files&lt;/li&gt;
-&lt;li&gt;.eleventy.js&lt;/li&gt;
-&lt;li&gt;Updated path for layoutAlias&lt;/li&gt;
-&lt;li&gt;Updated paths for &#39;css&#39; and &#39;img&#39; passthrough&lt;/li&gt;
-&lt;li&gt;Updated path for 404 page&lt;/li&gt;
-&lt;li&gt;Updated main dir paths&lt;/li&gt;
-&lt;li&gt;Updated .gitignore&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;I wasn&#39;t keen on the original directory structure of the project. I like to keep my &lt;code&gt;src&lt;/code&gt; and &lt;code&gt;dist&lt;/code&gt; directories seperate from each other, wheras this project didn&#39;t use a &lt;code&gt;src&lt;/code&gt; directory and instead served things from the root.&lt;/p&gt;
+&lt;p&gt;I also prefer to have my assets contained within an &lt;code&gt;assets&lt;/code&gt; directory where I can store my imgs, fonts, css and js files.&lt;/p&gt;
+&lt;p&gt;The directory structure had a directory within &lt;code&gt;src&lt;/code&gt; called &lt;code&gt;includes&lt;/code&gt; which would be used to store template files, and within here there was a subdirectory called &lt;code&gt;layouts&lt;/code&gt;. I was not keen on this so I decided to move layouts to the &lt;code&gt;src&lt;/code&gt; directory, and rename &lt;code&gt;includes&lt;/code&gt; to &lt;code&gt;components&lt;/code&gt; as this is more similar of a structure to the gulp based system I had built myself. These changes meant I had to edit a lot of the references to these directories within the other template files.&lt;/p&gt;
+&lt;p&gt;The next task was to make some modifications to the &lt;code&gt;eleventy.js&lt;/code&gt; file. This file is used by 11ty as a configuration for the build. I  cannot remember all the changes made here at the time of writing, but I will update this section once I have verified what work was done here.&lt;/p&gt;
+&lt;p&gt;Finally, I updated the &lt;code&gt;.gitignore&lt;/code&gt; file, I believe part of my reason for doing this was to stop 11ty from including certain files within the build. Again, I cannot remember this for certain just yet, but will update this post once I have reviewed the work done on the previous step.&lt;/p&gt;
+&lt;!--
+- Restructured website files
+- Moved all &#39;src&#39; files into a &#39;src&#39; directory
+- Moved &#39;css&#39; and &#39;img&#39; to directories to &#39;src/assets&#39;
+- Created a &#39;_layouts&#39; directory and moved layout files into here
+- Renamed &#39;_includes&#39; to &#39;_components&#39;
+- Updated template paths in all &#39;src&#39; files
+- .eleventy.js
+- Updated path for layoutAlias
+- Updated paths for &#39;css&#39; and &#39;img&#39; passthrough
+- Updated path for 404 page
+- Updated main dir paths
+- Updated .gitignore
+- --&gt;
 &lt;h3 id=&quot;setting-up-the-hosting&quot; tabindex=&quot;-1&quot;&gt;Setting up the hosting &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#setting-up-the-hosting&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The next task was to configure the hosting. I knew I wanted to host the site via GitHub pages. The main reason for this was as a learning excercise. I&#39;d seen it done previously for project sites but had never gotten round to putting it into practice. I also wanted to use this oppurtunity to experiment with GitHub actions as this is another area that I hadn&#39;t had the oppurtunity to practice. It would be been very easy to set up a simple vhost on one of my servers and upload the projects &lt;code&gt;dist&lt;/code&gt; directory via FTP or SSH, but I&#39;ve done that plenty of times before, this time I wanted automation to handle all that. Updating the site should be as simple as commiting a change to the GitHub repo.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Add CNAME file to project root&lt;/li&gt;
 &lt;li&gt;Test build, worked.&lt;/li&gt;
@@ -130,16 +145,19 @@ rm -rg .git // I did this so that I could initialise my own git repository
 &lt;/ul&gt;
 &lt;h2 id=&quot;making-it-my-own&quot; tabindex=&quot;-1&quot;&gt;Making it my own &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#making-it-my-own&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;cleaning-up&quot; tabindex=&quot;-1&quot;&gt;Cleaning up &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#cleaning-up&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Removed travis.yml and netlify.yml&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;As I was using GitHub actions, I didn&#39;t really need either the &lt;code&gt;travis.yml&lt;/code&gt; or &lt;code&gt;netlify.yml&lt;/code&gt; files, so I deleted them&lt;/p&gt;
+&lt;!-- - Removed travis.yml and netlify.yml --&gt;
 &lt;h3 id=&quot;borrowing-bits-from-html5boilerplate&quot; tabindex=&quot;-1&quot;&gt;Borrowing bits from html5boilerplate &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#borrowing-bits-from-html5boilerplate&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Implemented rootfiles from html5boilerplate&lt;/li&gt;
-&lt;li&gt;Restructured _layouts/base.njk&lt;/li&gt;
-&lt;li&gt;Added references to new rootfiles from html5boilerplate&lt;/li&gt;
-&lt;li&gt;Updated eleventy.js to copy from src/_rootfiles/ to dist/&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;I&#39;ve liked using the html5boilerplate as a starting point for projects. It doesn&#39;t do much, but makes for a very clean jumpoff point that can be moulded into anything, whilst covering a lot of points that I would probably forget about (such as &lt;code&gt;site.webmanifest&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;I started by cloning the repository into a sub-directory of the &lt;code&gt;src&lt;/code&gt; called &lt;code&gt;_rootfiles&lt;/code&gt;, and again ran &lt;code&gt;rm -rf .git&lt;/code&gt; to clear out the initial git repository.&lt;/p&gt;
+&lt;p&gt;I then updated &lt;code&gt;_layouts/base.njk&lt;/code&gt; to include some of the document structure from the html5boilerplate &lt;code&gt;index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, I updated &lt;code&gt;eleventy.js&lt;/code&gt; to copy the contents of &lt;code&gt;_rootfiles&lt;/code&gt; into the root of the &lt;code&gt;dist&lt;/code&gt; directory during the build.&lt;/p&gt;
+&lt;!-- 
+- Implemented rootfiles from html5boilerplate
+- Restructured _layouts/base.njk
+- Added references to new rootfiles from html5boilerplate
+- Updated eleventy.js to copy from src/_rootfiles/ to dist/
+--&gt;
 &lt;h3 id=&quot;borrowing-bits-from-harry-roberts-%40-css-wizardry&quot; tabindex=&quot;-1&quot;&gt;Borrowing bits from Harry Roberts @ CSS Wizardry &lt;a class=&quot;direct-link&quot; href=&quot;https://deanmorgan.dev/posts/01-how-i-built-this-site/#borrowing-bits-from-harry-roberts-%40-css-wizardry&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Restructured header to mirror config at csswizardry&lt;/li&gt;

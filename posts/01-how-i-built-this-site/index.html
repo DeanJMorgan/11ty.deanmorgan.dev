@@ -80,7 +80,14 @@
 <li><a href="#initialising-the-project">Initialising the project</a>
 <ul>
 <li><a href="#cloning-an-11ty-template-project">Cloning an 11ty template project</a></li>
-<li><a href="#updating-root-files">Updating root files</a></li>
+<li><a href="#updating-root-files">Updating root files</a>
+<ul>
+<li><a href="#updated-packagejson">Updated package.json</a></li>
+<li><a href="#updated-metadatajson">Updated metadata.json</a></li>
+<li><a href="#cleaned-content-from-readmemd">Cleaned content from readme.md</a></li>
+<li><a href="#updated-travisyml">Updated travis.yml</a></li>
+</ul>
+</li>
 <li><a href="#modifying-the-directory-structure">Modifying the directory structure</a></li>
 <li><a href="#setting-up-the-hosting">Setting up the hosting</a></li>
 </ul>
@@ -154,28 +161,36 @@
 rm -rg .git // I did this so that I could initialise my own git repository
 </code></pre>
 <h3 id="updating-root-files" tabindex="-1">Updating root files <a class="direct-link" href="#updating-root-files">#</a></h3>
-<ul>
-<li>Updated package.json</li>
-<li>Updated metadata.json</li>
-<li>Cleaned content from <a href="http://readme.md">readme.md</a></li>
-<li>Updated travis.yml</li>
-</ul>
+<h4 id="updated-package.json" tabindex="-1">Updated package.json <a class="direct-link" href="#updated-package.json">#</a></h4>
+<p>Because I cloned this project initially, I needed to modify the <code>package.json</code> to include the correct data for this project, as you would if you ran <code>npm init</code> and followed the guided process.</p>
+<h4 id="updated-metadata.json" tabindex="-1">Updated metadata.json <a class="direct-link" href="#updated-metadata.json">#</a></h4>
+<p>The <code>metadata.json</code> file is used to add some basic data to the site, such as the url, page title, language etc. Again, this data needed to be modified to suit this project.</p>
+<h4 id="cleaned-content-from-readme.md" tabindex="-1">Cleaned content from <a href="http://readme.md">readme.md</a> <a class="direct-link" href="#cleaned-content-from-readme.md">#</a></h4>
+<p>I didn't want to use the <code>readme.md</code> from the cloned project, so I empited the contents out ready for me to write my own.</p>
+<h4 id="updated-travis.yml" tabindex="-1">Updated travis.yml <a class="direct-link" href="#updated-travis.yml">#</a></h4>
+<p>There where some project specific data in the <code>travis.yml</code> file, which I also updated to match this project.</p>
 <h3 id="modifying-the-directory-structure" tabindex="-1">Modifying the directory structure <a class="direct-link" href="#modifying-the-directory-structure">#</a></h3>
-<ul>
-<li>Restructured website files</li>
-<li>Moved all 'src' files into a 'src' directory</li>
-<li>Moved 'css' and 'img' to directories to 'src/assets'</li>
-<li>Created a '_layouts' directory and moved layout files into here</li>
-<li>Renamed '_includes' to '_components'</li>
-<li>Updated template paths in all 'src' files</li>
-<li>.eleventy.js</li>
-<li>Updated path for layoutAlias</li>
-<li>Updated paths for 'css' and 'img' passthrough</li>
-<li>Updated path for 404 page</li>
-<li>Updated main dir paths</li>
-<li>Updated .gitignore</li>
-</ul>
+<p>I wasn't keen on the original directory structure of the project. I like to keep my <code>src</code> and <code>dist</code> directories seperate from each other, wheras this project didn't use a <code>src</code> directory and instead served things from the root.</p>
+<p>I also prefer to have my assets contained within an <code>assets</code> directory where I can store my imgs, fonts, css and js files.</p>
+<p>The directory structure had a directory within <code>src</code> called <code>includes</code> which would be used to store template files, and within here there was a subdirectory called <code>layouts</code>. I was not keen on this so I decided to move layouts to the <code>src</code> directory, and rename <code>includes</code> to <code>components</code> as this is more similar of a structure to the gulp based system I had built myself. These changes meant I had to edit a lot of the references to these directories within the other template files.</p>
+<p>The next task was to make some modifications to the <code>eleventy.js</code> file. This file is used by 11ty as a configuration for the build. I  cannot remember all the changes made here at the time of writing, but I will update this section once I have verified what work was done here.</p>
+<p>Finally, I updated the <code>.gitignore</code> file, I believe part of my reason for doing this was to stop 11ty from including certain files within the build. Again, I cannot remember this for certain just yet, but will update this post once I have reviewed the work done on the previous step.</p>
+<!--
+- Restructured website files
+- Moved all 'src' files into a 'src' directory
+- Moved 'css' and 'img' to directories to 'src/assets'
+- Created a '_layouts' directory and moved layout files into here
+- Renamed '_includes' to '_components'
+- Updated template paths in all 'src' files
+- .eleventy.js
+- Updated path for layoutAlias
+- Updated paths for 'css' and 'img' passthrough
+- Updated path for 404 page
+- Updated main dir paths
+- Updated .gitignore
+- -->
 <h3 id="setting-up-the-hosting" tabindex="-1">Setting up the hosting <a class="direct-link" href="#setting-up-the-hosting">#</a></h3>
+<p>The next task was to configure the hosting. I knew I wanted to host the site via GitHub pages. The main reason for this was as a learning excercise. I'd seen it done previously for project sites but had never gotten round to putting it into practice. I also wanted to use this oppurtunity to experiment with GitHub actions as this is another area that I hadn't had the oppurtunity to practice. It would be been very easy to set up a simple vhost on one of my servers and upload the projects <code>dist</code> directory via FTP or SSH, but I've done that plenty of times before, this time I wanted automation to handle all that. Updating the site should be as simple as commiting a change to the GitHub repo.</p>
 <ul>
 <li>Add CNAME file to project root</li>
 <li>Test build, worked.</li>
@@ -185,16 +200,19 @@ rm -rg .git // I did this so that I could initialise my own git repository
 </ul>
 <h2 id="making-it-my-own" tabindex="-1">Making it my own <a class="direct-link" href="#making-it-my-own">#</a></h2>
 <h3 id="cleaning-up" tabindex="-1">Cleaning up <a class="direct-link" href="#cleaning-up">#</a></h3>
-<ul>
-<li>Removed travis.yml and netlify.yml</li>
-</ul>
+<p>As I was using GitHub actions, I didn't really need either the <code>travis.yml</code> or <code>netlify.yml</code> files, so I deleted them</p>
+<!-- - Removed travis.yml and netlify.yml -->
 <h3 id="borrowing-bits-from-html5boilerplate" tabindex="-1">Borrowing bits from html5boilerplate <a class="direct-link" href="#borrowing-bits-from-html5boilerplate">#</a></h3>
-<ul>
-<li>Implemented rootfiles from html5boilerplate</li>
-<li>Restructured _layouts/base.njk</li>
-<li>Added references to new rootfiles from html5boilerplate</li>
-<li>Updated eleventy.js to copy from src/_rootfiles/ to dist/</li>
-</ul>
+<p>I've liked using the html5boilerplate as a starting point for projects. It doesn't do much, but makes for a very clean jumpoff point that can be moulded into anything, whilst covering a lot of points that I would probably forget about (such as <code>site.webmanifest</code>).</p>
+<p>I started by cloning the repository into a sub-directory of the <code>src</code> called <code>_rootfiles</code>, and again ran <code>rm -rf .git</code> to clear out the initial git repository.</p>
+<p>I then updated <code>_layouts/base.njk</code> to include some of the document structure from the html5boilerplate <code>index.html</code>.</p>
+<p>Finally, I updated <code>eleventy.js</code> to copy the contents of <code>_rootfiles</code> into the root of the <code>dist</code> directory during the build.</p>
+<!-- 
+- Implemented rootfiles from html5boilerplate
+- Restructured _layouts/base.njk
+- Added references to new rootfiles from html5boilerplate
+- Updated eleventy.js to copy from src/_rootfiles/ to dist/
+-->
 <h3 id="borrowing-bits-from-harry-roberts-%40-css-wizardry" tabindex="-1">Borrowing bits from Harry Roberts @ CSS Wizardry <a class="direct-link" href="#borrowing-bits-from-harry-roberts-%40-css-wizardry">#</a></h3>
 <ul>
 <li>Restructured header to mirror config at csswizardry</li>
